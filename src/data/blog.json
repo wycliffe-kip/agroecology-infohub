@@ -1,0 +1,19 @@
+
+[
+  {
+    "id": 1,
+    "title": "The Power of Organic Farming",
+    "image": "/images/blog1.jpeg",
+    "excerpt": "Learn how organic farming benefits both health and the environment.",
+    "content": "Organic farming avoids synthetic inputs and promotes biodiversity. It ensures healthier food and preserves soil health.",
+    "tags": ["organic", "farming"]
+  },
+  {
+    "id": 2,
+    "title": "Agroecology Principles",
+    "image": "/images/blog2.jpeg",
+    "excerpt": "Explore the core principles of agroecology and how they apply in Africa.",
+    "content": "Agroecology integrates ecological principles into farming, creating sustainable systems for food and livelihood.",
+    "tags": ["agroecology", "sustainability"]
+  }
+]

@@ -1,16 +1,17 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
+  darkMode: "class", // 👈 important for next-themes
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-  extend: {
-    fontFamily: {
-      sans: ['Geist Sans', 'Arial', 'Helvetica', 'sans-serif'],
-      mono: ['Geist Mono', 'monospace'],
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-geist-sans)', 'Arial', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'monospace'],
+      },
     },
   },
-},
   plugins: [],
 };

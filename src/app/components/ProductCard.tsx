@@ -1,27 +1,47 @@
-// src/app/components/ProductCard.tsx
+"use client";
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+// Define the Product interface
 interface Product {
   id: number;
   name: string;
-  certification: string;
-  benefits: string[];
   image: string;
+  certification: string;
+  nutrition: string[];
   category: string;
 }
 
-const ProductCard = ({ product }: { product: Product }) => (
-  <div className="border rounded-lg shadow hover:shadow-md transition p-4 bg-white">
-    <img src={product.image} alt={product.name} className="h-48 w-full object-cover rounded-md mb-4" />
-    <h3 className="text-lg font-semibold">{product.name}</h3>
-    <p className="text-sm text-green-600 mb-2">{product.certification}</p>
-    <div className="flex flex-wrap gap-2 text-xs mb-2">
-      {product.benefits.map((b, i) => (
-        <span key={i} className="bg-green-100 text-green-800 px-2 py-1 rounded-full">
-          {b}
-        </span>
-      ))}
-    </div>
-    <p className="text-sm text-gray-500">Category: {product.category}</p>
-  </div>
-);
+interface ProductCardProps {
+  product: Product;
+}
 
-export default ProductCard;
+export default function ProductCard({ product }: ProductCardProps) {
+  return (
+    <div className="border rounded-lg shadow-sm p-4 hover:shadow-md transition">
+      <Image
+        src={product.image}
+        alt={product.name}
+        width={300}
+        height={200}
+        className="rounded-md"
+      />
+      <h3 className="mt-2 font-semibold text-lg">{product.name}</h3>
+      <span className="text-sm text-green-600">{product.certification}</span>
+      <div className="text-sm mt-2">
+        {product.nutrition.map((n) => (
+          <span
+            key={n}
+            className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mr-2 mb-1"
+          >
+            {n}
+          </span>
+        ))}
+      </div>
+      <Link href={`/products/${product.id}`} className="block mt-4 text-blue-500 hover:underline">
+  View Details
+</Link>
+    </div>
+  );
+}
