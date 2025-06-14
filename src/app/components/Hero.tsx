@@ -13,6 +13,7 @@ const Hero = () => {
   const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Automatically change image every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
@@ -20,14 +21,20 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Preload next image
+  useEffect(() => {
+    const nextImage = new Image();
+    nextImage.src = images[(currentImageIndex + 1) % images.length];
+  }, [currentImageIndex]);
+
   return (
     <section className="relative w-full h-[60vh] overflow-hidden flex items-center justify-center">
-      {/* Background Slider */}
-      <div className="absolute inset-0">
+      {/* Background Image Slider */}
+      <div className="absolute inset-0" aria-hidden="true">
         {images.map((img, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
               index === currentImageIndex ? 'opacity-100' : 'opacity-0'
             }`}
             style={{ backgroundImage: `url(${img})` }}
@@ -38,22 +45,24 @@ const Hero = () => {
       {/* Pattern Overlay */}
       <div
         className="absolute inset-0 z-10"
+        aria-hidden="true"
         style={{
           backgroundImage: 'url(/images/repeatable_pattern.svg)',
           backgroundRepeat: 'repeat',
-          opacity: 0.2, // adjust as needed
+          backgroundSize: 'auto 80px',
+          opacity: 0.2,
         }}
       />
 
-      {/* Dark Overlay for readability */}
-      <div className="absolute inset-0 bg-black/40 dark:bg-black/60 z-20" />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/40 dark:bg-black/60 z-20" aria-hidden="true" />
 
       {/* Text Content */}
       <div className="relative z-30 text-center text-white px-4">
-        <h1 className="text-4xl md:text-6xl font-bold">
+        <h1 className="text-3xl md:text-6xl font-bold">
           {t('hero.title')}
         </h1>
-        <p className="mt-4 text-lg max-w-2xl mx-auto">
+        <p className="mt-4 text-base md:text-lg max-w-2xl mx-auto">
           {t('hero.subtitle')}
         </p>
       </div>
