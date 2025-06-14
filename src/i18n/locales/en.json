@@ -1,9 +1,31 @@
-
 {
   "home": "Home",
   "products": "Products",
   "blog": "Blog",
   "map": "Map",
   "faqs": "FAQs",
-  "title": "Agroecology InfoHub"
+  "title": "Agroecology InfoHub",
+  "search": "Search",
+  "all": "All",
+  "contact": "Contact",
+  "quick_links": "Quick Links",
+  "email": "Email",
+  "language": "Language",
+  "toggle_theme": "Toggle Theme",
+  "not_found": "Not Found",
+  "loading": "Loading...",
+  "view_all": "View All",
+  "read_more": "Read More",
+  "related_posts": "Related Posts",
+  "hero": {
+    "title": "Welcome to Agroecology InfoHub",
+    "subtitle": "Discover trusted information, products, and resources about organic and agroecological practices in Africa."
+  },
+  "footer": {
+    "description": "Empowering Africa with knowledge, products, and practices rooted in agroecology and sustainability.",
+    "quick_links": "Quick Links",
+    "contact": "Contact",
+    "email": "Email"
+  }
 }
+

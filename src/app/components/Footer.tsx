@@ -1,31 +1,36 @@
+'use client';
+
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-green-700 text-white dark:bg-zinc-900 dark:text-gray-100">
       <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h2 className="font-bold text-lg mb-2">Agroecology InfoHub</h2>
+          <h2 className="font-bold text-lg mb-2">{t("title")}</h2>
           <p className="text-sm">
-            Empowering Africa with knowledge, products, and practices rooted in agroecology and sustainability.
+            {t("footer.description")}
           </p>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">Quick Links</h3>
+          <h3 className="font-semibold mb-2">{t("footer.quick_links")}</h3>
           <ul className="space-y-1 text-sm">
-            <li><Link href="/" className="hover:underline">Home</Link></li>
-            <li><Link href="/products" className="hover:underline">Products</Link></li>
-            <li><Link href="/blog" className="hover:underline">Blog</Link></li>
-            <li><Link href="/map" className="hover:underline">Map</Link></li>
-            <li><Link href="/faqs" className="hover:underline">FAQs</Link></li>
+            <li><Link href="/" className="hover:underline">{t("home")}</Link></li>
+            <li><Link href="/products" className="hover:underline">{t("products")}</Link></li>
+            <li><Link href="/blog" className="hover:underline">{t("blog")}</Link></li>
+            <li><Link href="/map" className="hover:underline">{t("map")}</Link></li>
+            <li><Link href="/faqs" className="hover:underline">{t("faqs")}</Link></li>
           </ul>
         </div>
         <div>
-          <h3 className="font-semibold mb-2">Contact</h3>
+          <h3 className="font-semibold mb-2">{t("footer.contact")}</h3>
           <p className="text-sm">
-            Email: <a href="mailto:info@agrohub.africa" className="hover:underline">info@agrohub.africa</a>
+            {t("footer.email")}: <a href="mailto:info@agrohub.africa" className="hover:underline">info@agrohub.africa</a>
           </p>
-          <p className="text-sm mt-1">© {new Date().getFullYear()} Agroecology InfoHub</p>
+          <p className="text-sm mt-1">© {new Date().getFullYear()} {t("title")}</p>
         </div>
       </div>
     </footer>

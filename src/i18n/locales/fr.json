@@ -1,9 +1,30 @@
-
 {
   "home": "Accueil",
   "products": "Produits",
   "blog": "Blog",
   "map": "Carte",
   "faqs": "FAQs",
-  "title": "Centre d'information agroécologique"
+  "title": "Agroécologie InfoHub",
+  "search": "Rechercher",
+  "all": "Tout",
+  "contact": "Contact",
+  "quick_links": "Liens rapides",
+  "email": "Email",
+  "language": "Langue",
+  "toggle_theme": "Changer le thème",
+  "not_found": "Non trouvé",
+  "loading": "Chargement...",
+  "view_all": "Voir tout",
+  "read_more": "Lire la suite",
+  "related_posts": "Articles associés",
+  "hero": {
+    "title": "Bienvenue sur Agroécologie InfoHub",
+    "subtitle": "Découvrez des informations fiables, des produits et des ressources sur les pratiques biologiques et agroécologiques en Afrique."
+  },
+  "footer": {
+    "description": "Autonomiser l’Afrique grâce à des connaissances, des produits et des pratiques fondés sur l’agroécologie et la durabilité.",
+    "quick_links": "Liens rapides",
+    "contact": "Contact",
+    "email": "E-mail"
+  }
 }

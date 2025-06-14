@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Sun, Moon, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function NavigationBar() {
   const { t } = useTranslation();
@@ -18,12 +19,13 @@ export default function NavigationBar() {
   if (!mounted) return null;
 
   return (
-    <nav className="fixed top-0 w-full bg-green-700 dark:bg-zinc-900 text-white px-6 py-4 shadow-md z-50">
+    <nav className="fixed top-0 w-full bg-green-700 dark:bg-zinc-900 text-white px-6 shadow-md z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo / Title */}
-        <div className="text-2xl font-bold">
-          <Link href="/">{t("title")}</Link>
-        </div>
+         {/* Logo / Title */}
+        <Link href="/" className="flex items-center space-x-2">
+          <Image className="bg-green-50" src="/images/logo.png" alt="Logo" width={70} height={20} />
+          <span className="text-2xl font-bold">{t("title")}</span>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-4 text-sm font-medium">

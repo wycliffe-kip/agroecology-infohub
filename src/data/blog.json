@@ -1,4 +1,3 @@
-
 [
   {
     "id": 1,
@@ -15,5 +14,37 @@
     "excerpt": "Explore the core principles of agroecology and how they apply in Africa.",
     "content": "Agroecology integrates ecological principles into farming, creating sustainable systems for food and livelihood.",
     "tags": ["agroecology", "sustainability"]
+  },
+  {
+    "id": 3,
+    "title": "The Benefits of Agroecological Farming",
+    "image": "/images/blog3.jpeg",
+    "excerpt": "Learn how agroecological farming contributes to food security and biodiversity in Africa.",
+    "content": "Agroecological farming combines traditional knowledge and modern science to create sustainable and resilient food systems that improve productivity and protect the environment.",
+    "tags": ["Sustainability", "Farming", "Africa"]
+  },
+  {
+    "id": 4,
+    "title": "How to Identify Certified Organic Products",
+    "image": "/images/blog4.jpeg",
+    "excerpt": "Understand the labeling, certification processes, and what it means for consumers.",
+    "content": "Certified organic products must meet strict standards. Learn how to spot credible labels and avoid misleading claims.",
+    "tags": ["Organic", "Consumer Tips"]
+  },
+  {
+    "id": 5,
+    "title": "Urban Farming: Growing Food in Cities",
+    "image": "/images/blog5.jpeg",
+    "excerpt": "Explore innovative methods for producing fresh, healthy food in urban environments.",
+    "content": "Urban farming transforms rooftops, balconies, and empty lots into productive gardens, increasing access to fresh produce and reducing food miles.",
+    "tags": ["Urban Farming", "Innovation", "Sustainability"]
+  },
+  {
+    "id": 6,
+    "title": "Composting 101: Reduce Waste, Improve Soil",
+    "image": "/images/blog6.jpeg",
+    "excerpt": "Learn the basics of composting and how it benefits your garden and the planet.",
+    "content": "Composting turns food and garden waste into rich soil conditioner, reducing landfill use and enhancing soil fertility for healthier plants.",
+    "tags": ["Composting", "Soil Health", "Eco Tips"]
   }
 ]

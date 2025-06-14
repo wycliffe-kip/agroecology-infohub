@@ -1,9 +1,8 @@
 "use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-// Define the Product interface
 interface Product {
   id: number;
   name: string;
@@ -20,15 +19,19 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="border rounded-lg shadow-sm p-4 hover:shadow-md transition">
-      <Image
-        src={product.image}
-        alt={product.name}
-        width={300}
-        height={200}
-        className="rounded-md"
-      />
+      <div className="relative w-full h-48 mb-2">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-cover rounded-md"
+          sizes="(max-width: 768px) 100vw, 300px"
+        />
+      </div>
+
       <h3 className="mt-2 font-semibold text-lg">{product.name}</h3>
       <span className="text-sm text-green-600">{product.certification}</span>
+
       <div className="text-sm mt-2">
         {product.nutrition.map((n) => (
           <span
@@ -39,9 +42,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           </span>
         ))}
       </div>
+
       <Link href={`/products/${product.id}`} className="block mt-4 text-blue-500 hover:underline">
-  View Details
-</Link>
+        View Details
+      </Link>
     </div>
   );
 }

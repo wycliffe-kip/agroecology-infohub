@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import markets from '@/data/markets.json';
 
 // Fix Leaflet marker icon issue
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: '/leaflet/marker-icon-2x.jpeg',
@@ -15,7 +16,7 @@ L.Icon.Default.mergeOptions({
 
 const MapView = () => {
   return (
-    <div className="h-[500px] w-full rounded shadow overflow-hidden z-0">
+    <div className="h-[500px] w-full rounded shadow z-0">
       <MapContainer
         center={[-1.2921, 36.8219]}
         zoom={6}
