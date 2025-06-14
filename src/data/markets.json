@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Green Harvest Market",
+    "latitude": -1.2921,
+    "longitude": 36.8219,
+    "description": "Local organic produce and eco-products in Nairobi."
+  },
+  {
+    "id": 2,
+    "name": "EcoMarket Eldoret",
+    "latitude": 0.5143,
+    "longitude": 35.2698,
+    "description": "A vibrant organic farmers' market in Eldoret."
+  }
+]

@@ -6,6 +6,7 @@ import LanguageProvider from "./components/LanguageProvider";
 import { ThemeProvider } from "next-themes";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
+import 'leaflet/dist/leaflet.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
