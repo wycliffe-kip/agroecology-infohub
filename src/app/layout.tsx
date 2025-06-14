@@ -32,7 +32,9 @@ export default function RootLayout({
           <NavigationBar />
           <LanguageProvider>
             <main className="flex-grow">{children}</main>
+           
           </LanguageProvider>
+          
           <Footer />
         </ThemeProvider>
       </body>
