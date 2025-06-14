@@ -12,5 +12,33 @@
     "latitude": 0.5143,
     "longitude": 35.2698,
     "description": "A vibrant organic farmers' market in Eldoret."
+  },
+  {
+    "id": 3,
+    "name": "Kampala Green Co-op",
+    "latitude": 0.3476,
+    "longitude": 32.5825,
+    "description": "Community-supported agriculture initiative in Kampala, Uganda."
+  },
+  {
+    "id": 4,
+    "name": "Accra Eco Trade Hub",
+    "latitude": 5.6037,
+    "longitude": -0.1870,
+    "description": "Sustainable agricultural market and resource center in Accra, Ghana."
+  },
+  {
+    "id": 5,
+    "name": "Dar Organic Market",
+    "latitude": -6.7924,
+    "longitude": 39.2083,
+    "description": "A network of organic growers and eco-conscious consumers in Dar es Salaam, Tanzania."
+  },
+  {
+    "id": 6,
+    "name": "Cape Town Fresh & Green",
+    "latitude": -33.9249,
+    "longitude": 18.4241,
+    "description": "Organic farmers’ cooperative with local, seasonal produce in Cape Town, South Africa."
   }
 ]

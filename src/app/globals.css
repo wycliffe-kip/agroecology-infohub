@@ -21,3 +21,14 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+.footer-pattern::before {
+  content: '';
+  background: url('/images/repeatable_pattern.svg') top left repeat;
+  background-size: auto 80px;
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}

@@ -11,6 +11,9 @@ module.exports = {
         sans: ['var(--font-geist-sans)', 'Arial', 'sans-serif'],
         mono: ['var(--font-geist-mono)', 'monospace'],
       },
+      colors: {
+        cream: '#fcf4e9',
+      },
     },
   },
   plugins: [],

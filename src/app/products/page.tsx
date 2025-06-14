@@ -21,7 +21,8 @@ export default function ProductsPage() {
   const uniqueCertifications = Array.from(new Set(products.map((p) => p.certification)));
 
   return (
-    <div className="max-w-6xl mx-auto p-6 pt-24">
+    <div className=" bg-cream mx-auto p-6 pt-24 dark:bg-zinc-900">
+        <div className="max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-green-800">Agroecological Products</h1>
 
       <div className="mb-6 flex flex-wrap gap-4">
@@ -56,6 +57,7 @@ export default function ProductsPage() {
         ) : (
           <p className="text-gray-600">No products found.</p>
         )}
+      </div>
       </div>
     </div>
   );
