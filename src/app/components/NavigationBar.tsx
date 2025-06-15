@@ -13,17 +13,38 @@ export default function NavigationBar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (!mounted) return null;
 
   return (
-    <nav className="fixed top-0 w-full bg-green-700 dark:bg-zinc-900 text-white px-6 shadow-md z-50">
+    <nav
+      className={`fixed top-0 w-full z-50 px-6 shadow-md text-white transition-all duration-300 ${
+        scrolled ? "mt-0" : "mt-9"
+      } ${scrolled ? "bg-green-700 dark:bg-zinc-900" : "bg-green-700 dark:bg-zinc-900"}`}
+    >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-         {/* Logo / Title */}
+        {/* Logo / Title */}
         <Link href="/" className="flex items-center space-x-2">
-          <Image className="bg-green-50" src="/images/logo.png" alt="Logo" width={70} height={20} />
+          <Image
+            className="bg-green-50"
+            src="/images/logo.png"
+            alt="Logo"
+            width={70}
+            height={20}
+          />
           <span className="text-2xl font-bold">{t("title")}</span>
         </Link>
 
@@ -56,50 +77,35 @@ export default function NavigationBar() {
 
       {/* Mobile Navigation Panel */}
       {mobileOpen && (
-  <ul className="md:hidden mt-4 px-4 pb-4 space-y-3 text-sm font-medium list-none">
-    <li>
-      <Link href="/" onClick={() => setMobileOpen(false)} className="block">
-        {t("home")}
-      </Link>
-    </li>
-    <li>
-      <Link href="/products" onClick={() => setMobileOpen(false)} className="block">
-        {t("products")}
-      </Link>
-    </li>
-    <li>
-      <Link href="/blog" onClick={() => setMobileOpen(false)} className="block">
-        {t("blog")}
-      </Link>
-    </li>
-    <li>
-      <Link href="/map" onClick={() => setMobileOpen(false)} className="block">
-        {t("map")}
-      </Link>
-    </li>
-    <li>
-      <Link href="/faqs" onClick={() => setMobileOpen(false)} className="block">
-        {t("faqs")}
-      </Link>
-    </li>
-    <li>
-      <LanguageSwitcher />
-    </li>
-    <li>
-      <button
-        onClick={() => {
-          setTheme(theme === "dark" ? "light" : "dark");
-          setMobileOpen(false);
-        }}
-        className="p-1 border rounded text-white border-white hover:bg-white/10 transition w-full text-left"
-        aria-label="Toggle theme"
-      >
-        {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-      </button>
-    </li>
-  </ul>
-)}
-
+        <ul className="md:hidden mt-4 px-4 pb-4 space-y-3 text-sm font-medium list-none">
+          {["home", "products", "blog", "map", "faqs"].map((item) => (
+            <li key={item}>
+              <Link
+                href={`/${item === "home" ? "" : item}`}
+                onClick={() => setMobileOpen(false)}
+                className="block"
+              >
+                {t(item)}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <LanguageSwitcher />
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                setTheme(theme === "dark" ? "light" : "dark");
+                setMobileOpen(false);
+              }}
+              className="p-1 border rounded text-white border-white hover:bg-white/10 transition w-full text-left"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 }

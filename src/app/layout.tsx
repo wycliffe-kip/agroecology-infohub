@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
 import 'leaflet/dist/leaflet.css';
+import TopSection from "./components/TopSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +22,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Agroecology InfoHub",
   description: "Platform for AE/EOA education and engagement",
+  icons: {
+    icon: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +34,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <TopSection />
           <NavigationBar />
           <LanguageProvider>
             <main className="flex-grow">{children}</main>

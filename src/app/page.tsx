@@ -9,6 +9,7 @@ import MapPage from "./map/page";
 export default function HomePage() {
   return (
     <main className="">
+      
       <NavigationBar />
       <Hero />
       <QuickLinks />
