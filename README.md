@@ -84,3 +84,58 @@ yarn install
 npm run dev
 
 - Open http://localhost:3000 with your browser to see the result.
+
+###📁 Folder Structure
+src/
+├─ app/
+│  ├─ blog/
+│  │  ├─ [id]/
+│  │  │  └─ page.tsx
+│  │  └─ page.tsx
+│  ├─ components/
+│  │  ├─ BlogCard.tsx
+│  │  ├─ FAQItem.tsx
+│  │  ├─ Footer.tsx
+│  │  ├─ Hero.tsx
+│  │  ├─ LanguageProvider.tsx
+│  │  ├─ LanguageSwitcher.tsx
+│  │  ├─ LoginForm.tsx
+│  │  ├─ MapView.tsx
+│  │  ├─ NavigationBar.tsx
+│  │  ├─ ProductCard.tsx
+│  │  ├─ QuickLinks.tsx
+│  │  ├─ RegisterForm.tsx
+│  │  ├─ ThemeProvider.tsx
+│  │  └─ TopSection.tsx
+│  ├─ faqs/
+│  │  └─ page.tsx
+│  ├─ map/
+│  │  └─ page.tsx
+│  ├─ products/
+│  │  ├─ [id]/
+│  │  │  └─ page.tsx
+│  │  └─ page.tsx
+│  ├─ favicon.ico.
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ not-found.tsx
+│  └─ page.tsx
+├─ data/
+│  ├─ blog.json
+│  ├─ faqs.json
+│  ├─ markets.json
+│  └─ products.json
+├─ i18n/
+│  ├─ locales/
+│  │  ├─ en.json
+│  │  └─ fr.json
+│  └─ index.ts
+└─ types/
+   └─ Product.ts
+
+## 📚 Notes
+All API-like data is mocked for this prototype (e.g., JSON files or simulated APIs).
+
+Responsive behavior and accessibility considerations were prioritized.
+
+TailwindCSS was used to ensure consistency and maintainability in styles.
